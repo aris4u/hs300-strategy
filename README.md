@@ -13,7 +13,7 @@ Python版本对Level-2资金行为采用日度大单净额近似映射，**不�
 - 实现：`hs300_strategy/execution.py`；`backtest.py` / `enhance.py` / `screen.py` / UI 均走此口径。
 - UI 盘中刷新（`live_refresh`）只给当前查看的股票打上通达信未完成日K并重算信号，**不是**已确认收盘信号，不能当成交依据。
 
-## 信号层次（不要混用）
+## 信号层次
 
 | 层次 | 含义 | 交易 |
 |---|---|---|
