@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+data/mf_stocks/
+data/stocks/
+data/kline_fetch_stamp.json
+output/charts/
+output/daily_update.json
+output/enhance_opt/universe_v1.pkl
+*.zip
+.cursor/

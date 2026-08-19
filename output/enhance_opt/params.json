@@ -1,0 +1,9 @@
+{
+  "live_chip": "活筹强度用当日成交量/MA20 作为 T 日可获得代理（原公式无 WINNER/筹码活筹字段）。",
+  "trend_score": "启动强度用公式已计算的 qsqd（趋势强度）作为 T 日代理。",
+  "fzqd": "公式原已计算，仅导出到信号表，不改信号逻辑。",
+  "ranking": "每日在增强仓候选（应用层仓位>0）内做截面标准化后等权加总，再取 Top N，T+1 开盘等权。",
+  "baseline": "output/enhance_opt/baseline/ 为原全部启动 70/30 结果，未覆盖 output/enhance_*。",
+  "two_schemes": "2026-08-19 起同时产出两套：env_top5 写 output/enhance_*；ct_all 写 output/enhance_ct_*。",
+  "scheme2_style": "方案二在启动拿到逃顶之上，按T日大盘环境切换老登/科技权重（3.0 vs 0.35），不按样本内结果搜参。"
+}

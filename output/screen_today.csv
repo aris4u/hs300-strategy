@@ -1,0 +1,2 @@
+﻿ts_code,name,bucket,signal_date,entry_date,entry_price,exit_date,exit_price,date,close,position,l2jbl,last_launch,bars_ago,execution,note,tdx_price,bid1,ask1,inner_outer,inner_outer_ratio,tdx
+601688.SH,华泰证券,推荐,2026-08-13,2026-08-14,19.56,,,2026-08-19,18.9,1.0,-0.208076486104631,2026-08-13,4,"T日收盘生成信号，T+1日开盘成交。禁止使用T日收盘价作为成交价。账本字段：signal_date, entry_date, entry_price, exit_date, exit_price。",收盘价不是成交价；质量评级不参与本表筛选。,18.900000000000002,18.88,18.900000000000002,-75341,-0.10755793618275755,五档+内外盘

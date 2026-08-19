@@ -1,0 +1,119 @@
+{
+  "full": [
+    "2010-07-01",
+    "2026-08-17"
+  ],
+  "train": [
+    "2010-07-01",
+    "2020-12-31"
+  ],
+  "test": [
+    "2021-01-01",
+    "2026-08-17"
+  ],
+  "hold_periods": [
+    5,
+    10,
+    15,
+    20,
+    30,
+    40,
+    60
+  ],
+  "event_primary_n": 20,
+  "debounce": 10,
+  "costs": {
+    "commission": 0.0003,
+    "stamp_tax": 0.001,
+    "slippage_buy": 0.0005,
+    "slippage_sell": 0.0005
+  },
+  "stock_formula": {
+    "market_filter": 1,
+    "volume_confirm": 1,
+    "accum_floor": 0.0,
+    "wash_window": 10,
+    "wash_min_pullback": 2.0,
+    "wash_max_pullback": 10.0,
+    "wash_vol_ratio": 0.85,
+    "wash_stay": 0.5,
+    "reverse_score": 50.0,
+    "swing_gain": 1.15,
+    "near_high_ratio": 0.88,
+    "launch_lookback": 5,
+    "take_profit_mult": 1.25,
+    "pos_band": 0.5,
+    "pos_trend": 0.7,
+    "overlay_pos_band": 0.7,
+    "overlay_pos_trend": 0.85
+  },
+  "index_formula": {
+    "market_filter": 1,
+    "volume_confirm": 1,
+    "accum_floor": 0.0,
+    "wash_window": 15,
+    "wash_min_pullback": 1.2,
+    "wash_max_pullback": 10.0,
+    "wash_vol_ratio": 0.85,
+    "wash_stay": 0.5,
+    "reverse_score": 50.0,
+    "swing_gain": 1.15,
+    "near_high_ratio": 0.88,
+    "launch_lookback": 10,
+    "take_profit_mult": 1.12,
+    "pos_band": 0.5,
+    "pos_trend": 0.7,
+    "overlay_pos_band": 0.7,
+    "overlay_pos_trend": 0.85
+  },
+  "formula_magic": {
+    "ma": [
+      5,
+      10,
+      13,
+      20,
+      50,
+      60,
+      120
+    ],
+    "accum_ma": 45,
+    "accum_ma_mult": 0.9,
+    "accum_env_mult": {
+      "4": 0.85,
+      "3": 0.95,
+      "2": 1.0,
+      "1": 1.2,
+      "0": 1.05
+    },
+    "launch_price_mult": {
+      ">=3": 1.005,
+      "else": 1.008
+    },
+    "launch_vol_mult": {
+      ">=3": 0.95,
+      "else": 1.0
+    },
+    "launch_accum_stay": 0.6,
+    "jc_lookback_launch": 40,
+    "jc_debounce": 10,
+    "vol_confirm_env": {
+      "4": 0.95,
+      "3": 1.0,
+      "2": 1.05,
+      "1": 1.15,
+      "0": 1.08
+    },
+    "l2_in": 0.0,
+    "l2_strong": 0.2,
+    "l2_out_big": -0.2
+  },
+  "enhance_weights": [
+    0.5,
+    0.3,
+    0.2,
+    0.1,
+    0.0
+  ],
+  "l2_disclaimer": "Python版本对Level-2资金行为采用日度大单净额近似映射，不是通达信 LARGEINTRDVOL / LARGEOUTTRDVOL / L2_AMO 的 100% 复刻。",
+  "rating_kind": "subjective/semi-quantitative"
+}

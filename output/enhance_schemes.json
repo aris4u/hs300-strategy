@@ -1,0 +1,146 @@
+{
+  "updated": "2026-08-19",
+  "core": 0.7,
+  "satellite": 0.3,
+  "execution": "T日收盘信号，T+1开盘成交",
+  "baseline": "output/enhance_opt/baseline/ 未覆盖",
+  "decision": "方案一保留环境评分Top5（现有产品）。方案二：启动拿到逃顶，并按T日大盘环境在老登/科技之间加权（下跌偏老登，上涨或左拐右偏科技）。风格倍率预先固定为 3.0 / 0.35，不按样本内结果搜参。",
+  "schemes": {
+    "env_top5": {
+      "product": "沪深300指数增强（方案一 · 环境评分Top5）",
+      "files": {
+        "metrics": "enhance_metrics.json",
+        "equity": "enhance_equity.csv",
+        "monthly": "enhance_monthly.csv",
+        "trades": "enhance_trades.csv",
+        "chart": "enhance.png",
+        "selection_json": "selection.json",
+        "selection_png": "selection.png"
+      },
+      "total_return": 0.4518484558795055,
+      "benchmark_return": 0.40541502004128294,
+      "excess_additive": 0.04643343583822257,
+      "avg_holdings": 5.0,
+      "periods": [
+        {
+          "id": "full",
+          "label": "全样本",
+          "start": "2024-09-02",
+          "end": "2026-08-19",
+          "strategy": 0.4518484558795055,
+          "hs300": 0.40541502004128294,
+          "excess_additive": 0.04643343583822257,
+          "max_drawdown": -0.15945230257139142
+        },
+        {
+          "id": "y2425",
+          "label": "2024-09～2025-12",
+          "start": "2024-09-02",
+          "end": "2025-12-31",
+          "strategy": 0.36104831080522737,
+          "hs300": 0.4180471367477805,
+          "excess_additive": -0.05699882594255312,
+          "max_drawdown": -0.15945230257139142
+        },
+        {
+          "id": "y24",
+          "label": "2024-09～2024-12",
+          "start": "2024-09-02",
+          "end": "2024-12-31",
+          "strategy": 0.1911771002334237,
+          "hs300": 0.20517538838307026,
+          "excess_additive": -0.013998288149646543,
+          "max_drawdown": -0.10405311923263094
+        },
+        {
+          "id": "y25",
+          "label": "2025全年",
+          "start": "2025-01-02",
+          "end": "2025-12-31",
+          "strategy": 0.1774831113445856,
+          "hs300": 0.21190066933389717,
+          "excess_additive": -0.034417557989311565,
+          "max_drawdown": -0.0937450594611583
+        },
+        {
+          "id": "y26",
+          "label": "2026至今",
+          "start": "2026-01-05",
+          "end": "2026-08-19",
+          "strategy": 0.05098573254565264,
+          "hs300": -0.027354208600094743,
+          "excess_additive": 0.07833994114574738,
+          "max_drawdown": -0.1336216979083683
+        }
+      ]
+    },
+    "ct_all": {
+      "product": "沪深300指数增强（方案二 · 启动拿到逃顶）",
+      "files": {
+        "metrics": "enhance_ct_metrics.json",
+        "equity": "enhance_ct_equity.csv",
+        "monthly": "enhance_ct_monthly.csv",
+        "trades": "enhance_ct_trades.csv",
+        "chart": "enhance_ct.png",
+        "selection_json": "selection_ct.json",
+        "selection_png": "selection_ct.png"
+      },
+      "total_return": 0.4653658757619803,
+      "benchmark_return": 0.40541502004128294,
+      "excess_additive": 0.05995085572069736,
+      "avg_holdings": 226.7578947368421,
+      "periods": [
+        {
+          "id": "full",
+          "label": "全样本",
+          "start": "2024-09-02",
+          "end": "2026-08-19",
+          "strategy": 0.4653658757619803,
+          "hs300": 0.40541502004128294,
+          "excess_additive": 0.05995085572069736,
+          "max_drawdown": -0.1546226246040059
+        },
+        {
+          "id": "y2425",
+          "label": "2024-09～2025-12",
+          "start": "2024-09-02",
+          "end": "2025-12-31",
+          "strategy": 0.4556880515613142,
+          "hs300": 0.4180471367477805,
+          "excess_additive": 0.03764091481353371,
+          "max_drawdown": -0.1546226246040059
+        },
+        {
+          "id": "y24",
+          "label": "2024-09～2024-12",
+          "start": "2024-09-02",
+          "end": "2024-12-31",
+          "strategy": 0.21296154072490925,
+          "hs300": 0.20517538838307026,
+          "excess_additive": 0.007786152341838992,
+          "max_drawdown": -0.10849532674156925
+        },
+        {
+          "id": "y25",
+          "label": "2025全年",
+          "start": "2025-01-02",
+          "end": "2025-12-31",
+          "strategy": 0.23634971900920476,
+          "hs300": 0.21190066933389717,
+          "excess_additive": 0.024449049675307588,
+          "max_drawdown": -0.10751389098749908
+        },
+        {
+          "id": "y26",
+          "label": "2026至今",
+          "start": "2026-01-05",
+          "end": "2026-08-19",
+          "strategy": -0.010577223160398885,
+          "hs300": -0.027354208600094743,
+          "excess_additive": 0.016776985439695857,
+          "max_drawdown": -0.09615608857418267
+        }
+      ]
+    }
+  }
+}

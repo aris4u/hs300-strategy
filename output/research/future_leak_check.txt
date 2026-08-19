@@ -1,0 +1,23 @@
+[future_leak_check]
+hard_leak=NO
+
+假设：
+- 信号只使用 T 日收盘已可得的 OHLC、成交量、日度资金流。
+- rolling(n) / hhv / llv / ma 含当日，不含未来。
+- ref/shift 正偏移为过去。
+- Tushare 日度大单净额假定 T 收盘后、T+1 开盘前可得（见 docs/l2_mapping.md）。
+- events.label_quality / 评级使用未来 N 日路径，不得进入实时过滤。
+- 旧 backtest/enhance 用收盘价成交，属于执行口径错误，不是公式内部未来函数。
+
+静态扫描：
+- [ok] advise.py:0  事后评级已标注隔离。
+- [ok] backtest.py:0  已接入 T+1 开盘执行口径。
+- [ok] enhance.py:0  已接入 T+1 开盘执行口径。
+- [ok] formula.py:0  ref() → shift(+n) 取过去；rolling/hhv/llv 含当日、不含未来。
+- [ok] screen.py:0  已接入 T+1 开盘执行口径。
+- [ok] screen.py:0  事后评级已标注隔离。
+- [ok] screener.py:0  rank_stocks 仅为事后档案；recommend_rank 不再作为买入清单。
+- [ok] selection.py:0  已接入 T+1 开盘执行口径。
+
+截断重放：ran=False  mismatches=0
+no sample passed; static scan only

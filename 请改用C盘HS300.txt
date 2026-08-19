@@ -1,0 +1,4 @@
+日常就在这个 vibe2 里改。
+
+C:\Users\zhaoz\HS300 是备份和发给别人的包装，不要两边一起改。
+发给别人仍用：C:\Users\zhaoz\HS300\share\HS300.zip

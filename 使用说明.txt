@@ -1,0 +1,16 @@
+沪深300选股
+
+打开
+  双击 HS300.cmd
+  不要把这个文件夹放进 OneDrive / 桌面同步目录。
+
+发给别人
+  1. 在本机运行：  powershell -File tools\make_share.ps1
+  2. 把生成的 zip 发给对方
+  3. 对方解压到任意本地磁盘（例如 D:\HS300），双击 HS300.cmd
+  对方不需要先安装 Python（zip 里带 runtime）。
+  不要发 .env，密钥不会打进软件包。
+
+本机稳定目录
+  C:\Users\<你>\HS300
+  桌面快捷方式指向这里，不再使用 OneDrive 桌面里的源码。
