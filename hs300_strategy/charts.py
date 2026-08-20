@@ -13,6 +13,7 @@ import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
+from matplotlib.path import Path as MarkerPath
 
 from hs300_strategy.advise import make_advice
 from hs300_strategy.data import DATA_DIR, fetch_hs300
@@ -33,11 +34,32 @@ LABEL_CN = {
     "exit": "离场",
 }
 
+def _arrow_marker(up: bool):
+    """Filled arrow (not a triangle). up=True points up for 建仓; False points down for 减仓."""
+    verts = [
+        (-0.22, -0.55),
+        (-0.22, 0.02),
+        (-0.52, 0.02),
+        (0.0, 0.58),
+        (0.52, 0.02),
+        (0.22, 0.02),
+        (0.22, -0.55),
+        (-0.22, -0.55),
+    ]
+    if not up:
+        verts = [(x, -y) for x, y in verts]
+    codes = [MarkerPath.MOVETO] + [MarkerPath.LINETO] * 6 + [MarkerPath.CLOSEPOLY]
+    return MarkerPath(verts, codes)
+
+
+ARROW_UP = _arrow_marker(True)
+ARROW_DOWN = _arrow_marker(False)
+
 # Only action points on the 3-year chart. Wash/other internals still compute, not drawn.
 MARKERS = (
     ("mark_opp", "机会点", "#9b59b6", "o", 55, "low", 0.014),
-    ("mark_entry", "建仓点", "#1abc9c", "^", 95, "low", 0.008),
-    ("mark_reduce", "减仓点", "#e74c3c", "v", 85, "high", 0.008),
+    ("mark_entry", "建仓点", "#1abc9c", ARROW_UP, 120, "low", 0.008),
+    ("mark_reduce", "减仓点", "#e74c3c", ARROW_DOWN, 110, "high", 0.008),
     ("mark_risk", "风险点", "#3498db", "d", 60, "high", 0.028),
     ("mark_exit", "清仓点", "#c0392b", "x", 70, "high", 0.020),
 )
